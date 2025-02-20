@@ -1,15 +1,16 @@
-import firebase from "firebase/app";
-import "firebase/database";
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 
+const firebaseConfig = {
+  apiKey: "your-api-key",
+  authDomain: "your-auth-domain",
+  projectId: "your-project-id",
+  storageBucket: "your-storage-bucket",
+  messagingSenderId: "your-messaging-sender-id",
+  appId: "your-app-id"
+};
 
-const config ={
-    apiKey: "AIzaSyAeFE0IfXQyEJICWDV01FTps9oPo6SMUHo",
-    authDomain: "firevuechat-59d82.firebaseapp.com",
-    projectId: "firevuechat-59d82",
-    storageBucket: "firevuechat-59d82.firebasestorage.app",
-    messagingSenderId: "1097853031981",
-    appId: "1:1097853031981:web:ca965aca9db96a074e4aa4"
-}
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-const db =firebase.initializeApp(config);
 export default db;

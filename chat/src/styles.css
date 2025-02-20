@@ -95,7 +95,7 @@
 						box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 
 						&::placeholder {
-							color: #666;
+							color: #413c3c;
 						}
 					}
 				}
@@ -215,7 +215,7 @@
 					transition: 0.4s;
 
 					&::placeholder {
-						color: #888;
+						color: #5e5a5a;
 						transition: 0.4s;
 					}
 				}

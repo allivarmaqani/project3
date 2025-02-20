@@ -10,17 +10,30 @@
   </form>
 </div>
 <div class="view chat" v-else>
-  <h1>Chat View</h1>
+ <header>
+  <button class="logout">logout</button>
+  <h1>welocme,{{ state.username }}</h1>
+ </header>
+ <section class="chat-box">
+ //message
+ </section>
+ <footer>
+  <form @submit.prevent="SendMessage">
+    <input type="text" placeholder="write a message..."/>
+    <input type="submit" value="Send">
+  </form>
+ </footer>
 </div>
 </template>
 
 <script>
 import { reactive,onMounted,ref } from 'vue';
+import db from './db';
 
 export default {
   setup(){
     const inputUsername =ref("");
-
+    const inputMessage =ref("");
 
     const state =reactive({
       username:"",
@@ -34,10 +47,26 @@ export default {
 inputUsername.value ="";
       }
     }
+
+    const SendMessage =() =>{
+      const messageRef = db.database().ref("messages");
+
+      if(inputMessage.value ==="" || inputMessage.value ===null){
+      return;
+      }
+      const message = {
+        username:state.username,
+        content: inputMessage.value
+      }
+      messageRef.push(message);
+      inputMessage.value ="";
+    }
     return{
  inputUsername,
  Login,
- state
+ state,
+ inputMessage,
+ SendMessage
     }
   }
 }
