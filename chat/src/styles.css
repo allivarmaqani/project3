@@ -1,8 +1,13 @@
+@font-face {
+	font-family: 'iransans';
+	src: url('./font/IRANSans-Medium\ [@ClubEdits].ttf');
+}
+
 * {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
+	font-family: 'iransans';
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-
+    direction: rtl;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
