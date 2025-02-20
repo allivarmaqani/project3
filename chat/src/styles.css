@@ -2,7 +2,6 @@
 	font-family: 'iransans';
 	src: url('./font/IRANSans-Medium\ [@ClubEdits].ttf');
 }
-
 * {
 	font-family: 'iransans';
 	-webkit-font-smoothing: antialiased;
@@ -244,4 +243,5 @@
 			}
 		}
 	}
+	
 }

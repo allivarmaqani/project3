@@ -2,15 +2,15 @@
   <div class="view login" v-if="state.username === '' || state.username === null">
     <form class="login-form" @submit.prevent="Login">
       <div class="form-inner">
-        <h1>ورود به صفحه چت</h1>
+        <h1>ورود</h1>
         <label for="username">نام کاربری</label>
         <input 
           type="text" 
           v-model="inputUsername" 
-          placeholder="لطفا نام کاربری خود را وارد کنید" />
+          placeholder="نام کاربری خود را بنویسید" />
         <input 
           type="submit" 
-          value="Login" />
+          value="ورود" />
       </div>
     </form>
   </div>
@@ -18,7 +18,7 @@
   <div class="view chat" v-else>
     <header>
       <button class="logout" @click="Logout">ورود</button>
-      <h1>خوش آمدید, {{ state.username }}</h1>
+      <h1>Welcome, {{ state.username }}</h1>
     </header>
     
     <section class="chat-box">
@@ -38,7 +38,7 @@
         <input 
           type="text" 
           v-model="inputMessage" 
-          placeholder="پیام" />
+          placeholder="نوشتن پیام" />
         <input 
           type="submit" 
           value="ارسال" />
