@@ -19,8 +19,8 @@
  </section>
  <footer>
   <form @submit.prevent="SendMessage">
-    <input type="text" placeholder="write a message..."/>
-    <input type="submit" value="Send">
+    <input type="text" v-model="inputMessage" placeholder="write a message..."/>
+    <input type="submit" value="Send" >
   </form>
  </footer>
 </div>
