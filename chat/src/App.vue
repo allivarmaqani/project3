@@ -15,8 +15,13 @@
   <h1>welocme,{{ state.username }}</h1>
  </header>
  <section class="chat-box">
- //message
- </section>
+ <div v-for="message in state.messages" :key="message.key" :class="(message.username == state.username ? 'message current-user' :'message')">
+<div class="message-inner">
+  <div class="username">{{ message.username }}</div>
+  <div class="content">{{ message.content}}</div>
+</div>
+ </div>
+</section>
  <footer>
   <form @submit.prevent="SendMessage">
     <input type="text" v-model="inputMessage" placeholder="write a message..."/>
@@ -61,6 +66,24 @@ inputUsername.value ="";
       messageRef.push(message);
       inputMessage.value ="";
     }
+
+    onMounted(()=>{
+      const messageRef = db.database().ref("messages");
+
+      messageRef.on('value',snapshot =>{
+        const data = snapshot.val();
+        let messages = [];
+
+      Object.keys(data).forEach(key =>{
+        messages.push({
+          id:key,
+          username: data[key].username,
+          content: data[key].content,
+        });
+      });
+      state.messages = messages;
+      })
+    })
     return{
  inputUsername,
  Login,
@@ -72,6 +95,3 @@ inputUsername.value ="";
 }
 </script>
 
-<style lang="scss">
-
-</style>
