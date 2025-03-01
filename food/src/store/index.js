@@ -4,7 +4,7 @@ import * as actions from './actions.js'
 import * as mutations from './mutations.js'
 import * as getters from './getters.js'
 
-const sotre = createStore({
+const store = createStore({
     state,
     actions,
     mutations,
@@ -12,4 +12,4 @@ const sotre = createStore({
 })
 
 
-export default sotre;
+export default store;
