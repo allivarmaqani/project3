@@ -1,8 +1,10 @@
 <template>
- <div class="w-[800px] mx-auto p-8">
+ <div class="max-w-[800px] mx-auto p-8">
     <h1 class="text-5xl font-bold mb-5">{{ meal.strMeal }}</h1>
-    <img :src="meal.strMealThumb" alt="meal.strMeal">
+    <img :src="meal.strMealThumb" alt="meal.strMeal" class="max-w-[100%]">
     <div class="grid grid-cols-1 md:grid-cols-3 text-lg py-2">
+
+        {{ meal.strInstruction }}
         <div>
          <strong class="font-bold">Category:</strong>{{ meal.strCategory }}
         </div>  
@@ -34,6 +36,14 @@
                 </template>
             </ul>
         </div>
+    </div>
+    <div class="mt-4">
+        <YouTubeButton :href="meal.strYoutube"></YouTubeButton>
+        <a :href="meal.strSource" target="_blank" class="px-3 py-2 
+        rounded border-2 border-transparent text-indigo-600 hover:bg-indigo-600 hover:text-white trantision-colors
+         transition-colors" >
+         view original source
+        </a>
     </div>
  </div>
 </template>
