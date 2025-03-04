@@ -1,4 +1,7 @@
 
+
 export default{
-searchMeals:{}
+searchMeals:[],
+MealsByLetter:[],
+MealsByIngredient:[],
 }

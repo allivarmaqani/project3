@@ -7,8 +7,7 @@
          @change="searchMeals"  />
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-5 p-8">
-<MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
-
+    <MealItem v-for="meal of meals" :key="meal.idMeal" :meal="meal" />
     </div>
 </template>
 
@@ -18,7 +17,6 @@ import { computed, onMounted, ref } from 'vue';
 import store from '../store';
 import MealItem from '../components/MealItem.vue';
 import {useRoute} from 'vue-router'
-import YouTubeButton from '../components/YouTubeButton.vue';
 
 
 const route = useRoute();

@@ -14,14 +14,16 @@
     </p>
 
     <div class="flex items-center justify-between">
-
-     <YouTubeButton :href="meal.strYoutube" />
-
+     <YouTubeButton :href="meal.strYoutube">YouTube</YouTubeButton>
     </div>
   </div>
    </div>
 </template>
 <script setup>
+import YouTubeButton from './YouTubeButton.vue';
+
+
+
 const {meal} = defineProps({
     meal: {
         required: true,
