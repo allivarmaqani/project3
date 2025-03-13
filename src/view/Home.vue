@@ -1,6 +1,8 @@
 <template>
 <div class="flex flex-col p-8">
-   
+    <h1 style="font-size: xx-large;">hello, welocme to our restaurant</h1>
+    <br/>
+    <p>We are honored that you have registered on our website and enjoyed our food.</p>
 </div>
 
 </template>

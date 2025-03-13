@@ -2,9 +2,13 @@
     <div class="container ">
        <h2> Sign In Form</h2>
        <form>
+         <input  type="text" class="input-field" placeholder="name" required>
            <input  type="email" class="input-field" placeholder="Email" required>
            <input  type="password" class="input-field" placeholder="Password" required>
            <button @click="handleAlertClick" type="submit" class="btn">Sign In</button>
+           <br/>
+           <br/>
+           <br/>
        </form>
    </div>
 </template>
@@ -16,16 +20,15 @@ export default {
     name: 'SweetAlert2',
     methods:{
         handleAlertClick(){ 
-        Swal.fire({
-  position: "top-end",
+         Swal.fire({
+  title: "Good job!",
+  text: "You clicked the button!",
   icon: "success",
-  title: "Your registration was successful",
-  showConfirmButton: false,
-  timer: 3000
-},2000);
+});
         }
-    }
+},
 }
+
 </script>
 <style >
 
