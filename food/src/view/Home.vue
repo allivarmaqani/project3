@@ -1,6 +1,9 @@
 <template>
-<div class="flex flex-col p-8">
-   
+<div class="flex flex-col p-8 ">
+   <h1 class="text-2xl
+     flex justify-center">
+    Welcome to our Restaurant
+   </h1>
 </div>
 
 </template>
